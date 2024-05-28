@@ -22,6 +22,7 @@
   </div>
 </template>
 
+
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
@@ -32,15 +33,15 @@ export default defineComponent({
     const router = useRouter();
 
     const goToRegister = () => {
-      router.push({ name: 'Register' });
+      router.push('/register');
     };
 
     const goToList = () => {
-      router.push({ name: 'SeeWriters' });
+      router.push('/seeWriters');
     };
 
     const goToLogin = () => {
-      router.push({ name: 'Login' });
+      router.push('/login');
     };
 
     return {
@@ -51,6 +52,8 @@ export default defineComponent({
   },
 });
 </script>
+
+
 
 <style scoped>
 .home-page {
