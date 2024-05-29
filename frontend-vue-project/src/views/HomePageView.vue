@@ -16,8 +16,8 @@
       </div>
     </div>
     <div class="books-image">
-      <img src="@/assets/books.png" alt="Books">
-      <img src="@/assets/tea.png" alt="Tea">
+      <img src="../assets/books.png" alt="Books">
+      <img src="../assets/tea.png" alt="Tea">
     </div>
   </div>
 </template>
