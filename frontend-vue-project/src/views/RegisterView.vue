@@ -30,12 +30,11 @@
           <button @click="navigateToHome">No</button>
         </div>
         <div v-else>
-          <!-- who already have an account -->
+          <!-- who already has an account -->
           <p>Do you want to sign in?</p> 
           <button @click="navigateToLogin">Yes</button>
           <button @click="navigateToHome">No</button>
         </div>
-        <button @click="closeModal">Close</button>
       </div>
     </div>
   </div>
