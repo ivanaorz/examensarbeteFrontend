@@ -17,18 +17,22 @@ class AuthService {
     }
   }
 
-  async login(email: string, password: string): Promise<string> {
+  async login(email: string, password: string, username: string, authorName: string): Promise<string> {
     try {
-      const response = await axios.post(BASE_AUTH_URL + 'login', { email, password });
+      const response = await axios.post(BASE_AUTH_URL + 'login', { email, password, username, authorName });
       const token = response.data.token;
       jwtService.storeJwt(token);
       return 'Login successfully';
     } catch (err) {
       const error = err as any;
       console.error('Error during login:', error.response?.data?.message || error.message);
+      if (error.response?.status === 401 && error.response?.data?.message === 'Invalid credentials') {
+        throw new Error('Account does not exist');
+      }
       throw new Error(error.response?.data?.message || 'Login failed');
     }
   }
+
 
   async logout(): Promise<void> {
     try {
