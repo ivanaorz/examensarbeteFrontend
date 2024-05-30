@@ -3,10 +3,12 @@ import HomePageView from '../views/HomePageView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import LoginView from '../views/LoginView.vue'
 import PersonalPageView from '../views/PersonalPageView.vue';
-// import CreateBookView from '../views/CreateBookView.vue';
-// import SeeBooksView from '../views/SeeBooksView.vue';
-// import UpdateBookView from '../views/UpdateBookView.vue';
-// import DeleteBookView from '../views/DeleteBookView.vue';
+import CreateBookView from '../views/CreateBookView.vue';
+import SeeBooksView from '../views/SeeBooksView.vue';
+import UpdateBookView from '../views/UpdateBookView.vue';
+import DeleteBookView from '../views/DeleteBookView.vue';
+import SeeWritersView from '@/views/SeeWritersView.vue';
+import SeeWritersBooksView from '@/views/SeeWritersBooksView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,26 +34,37 @@ const router = createRouter({
       component: PersonalPageView
     },
    
-    // {
-    //   path: '/create',
-    //   name: 'CreateBookEntry',
-    //   component: CreateBookView
-    // },
-    // {
-    //   path: '/list',
-    //   name: 'ListBookEntries',
-    //   component: SeeBooksView
-    // },
-    // {
-    //   path: '/update',
-    //   name: 'UpdateBookEntry',
-    //   component: UpdateBookView
-    // },
-    // {
-    //   path: '/delete',
-    //   name: 'DeleteBookEntry',
-    //   component: DeleteBookView
-    // }
+    {
+      path: '/create-book',
+      name: 'CreateBookEntry',
+      component: CreateBookView
+    },
+    {
+      path: '/list',
+      name: 'ListBookEntries',
+      component: SeeBooksView
+    },
+    {
+      path: '/update-book',
+      name: 'UpdateBookEntry',
+      component: UpdateBookView
+    },
+    {
+      path: '/delete-book',
+      name: 'DeleteBookEntry',
+      component: DeleteBookView
+    },
+    {
+      path: '/seeWriters',
+      name: 'seeWriters',
+      component: SeeWritersView
+    },
+    {
+      path: '/authors/:author_name',
+      name: 'SeeWritersBooksView',
+      component: SeeWritersBooksView,
+      props: true
+    }
     
   ]
 })

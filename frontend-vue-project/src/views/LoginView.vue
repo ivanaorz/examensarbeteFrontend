@@ -8,7 +8,7 @@
         </div>
         <div class="input-group">
           <label for="authorName">Author Name</label>
-          <input type="text" id="authorName" v-model="authDetails.authorName" required />
+          <input type="text" id="authorName" v-model="authDetails.author_name" required />
         </div>
         <div class="input-group">
           <label for="email">Email</label>
@@ -40,7 +40,7 @@ export default defineComponent({
     const router = useRouter();
     const authDetails = ref({
       username: '',
-      authorName: '',
+      author_name: '',
       email: '',
       password: ''
     });
@@ -48,7 +48,7 @@ export default defineComponent({
 
     const login = async () => {
       try {
-        await AuthService.login(authDetails.value.email, authDetails.value.password, authDetails.value.username, authDetails.value.authorName);
+        await AuthService.login(authDetails.value.email, authDetails.value.password, authDetails.value.username, authDetails.value.author_name);
         router.push('/personal-page');
       } catch (error: unknown) {
         if (error instanceof Error && error.message === 'Account does not exist') {
