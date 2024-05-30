@@ -10,7 +10,8 @@
           <li @click="navigateTo('ListBookEntries')">See all book entries</li>
           <li @click="navigateTo('UpdateBookEntry')">Update book entry</li>
           <li @click="navigateTo('DeleteBookEntry')">Delete book entry</li>
-          <li @click="logout">Logout</li>
+          <!-- <li @click="logout">Logout</li> -->
+          <li><LogoutButton /></li>
         </ul>
       </div>
       <div class="main">
@@ -24,9 +25,15 @@
 import { defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
 import AuthService from '../service/authService';
+import LogoutButton from '../components/LogoutButton.vue';
+
+
 
 export default defineComponent({
   name: 'PersonalPageView',
+  components: {
+    LogoutButton
+  },
   setup() {
     const router = useRouter();
 
