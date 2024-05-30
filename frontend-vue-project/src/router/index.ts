@@ -5,7 +5,7 @@ import LoginView from '../views/LoginView.vue'
 import PersonalPageView from '../views/PersonalPageView.vue';
 import CreateBookView from '../views/CreateBookView.vue';
 import SeeBooksView from '../views/SeeBooksView.vue';
-// import UpdateBookView from '../views/UpdateBookView.vue';
+import UpdateBookView from '../views/UpdateBookView.vue';
 // import DeleteBookView from '../views/DeleteBookView.vue';
 
 const router = createRouter({
@@ -42,11 +42,11 @@ const router = createRouter({
       name: 'ListBookEntries',
       component: SeeBooksView
     },
-    // {
-    //   path: '/update',
-    //   name: 'UpdateBookEntry',
-    //   component: UpdateBookView
-    // },
+    {
+      path: '/update-book',
+      name: 'UpdateBookEntry',
+      component: UpdateBookView
+    },
     // {
     //   path: '/delete',
     //   name: 'DeleteBookEntry',

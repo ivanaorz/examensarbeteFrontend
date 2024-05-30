@@ -1,6 +1,7 @@
 import axios from 'axios';
 import jwtService from './jwtService';
 import type { BookDetails } from '../model/bookDetails';
+import type { UpdateBookDetails } from '../model/bookDetails';
 
 const BASE_BOOK_URL = 'http://127.0.0.1:5000/books/';
 
@@ -37,7 +38,7 @@ class BookService {
     }
   }
 
-  async updateBook(bookDetails: BookDetails): Promise<string> {
+  async updateBook(bookDetails: UpdateBookDetails): Promise<string> {
     try {
       const token = jwtService.getAuthToken();
       const response = await axios.put(BASE_BOOK_URL + 'update', bookDetails, {
@@ -52,6 +53,8 @@ class BookService {
       throw new Error(error.response?.data?.message || 'Book update failed');
     }
   }
+
+  
 
   async deleteBook(title: string): Promise<string> {
     try {

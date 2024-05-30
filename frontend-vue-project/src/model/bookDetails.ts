@@ -7,4 +7,10 @@ export interface BookDetails {
     year: number; 
   }
 
- 
+  export interface UpdateBookDetails {
+    title: string;
+    new_title: string;
+    new_author_name: string;
+    new_genre: string;
+    new_year: number;
+  }
