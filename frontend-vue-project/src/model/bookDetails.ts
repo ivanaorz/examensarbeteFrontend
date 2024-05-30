@@ -1,8 +1,8 @@
 export interface BookDetails {
-    id: string;
-    userId: string;
+    id?: string;
+    userId?: string;
     title: string;
-    authorName: string;
+    author_name: string;
     genre: string;
     year: number; 
   }

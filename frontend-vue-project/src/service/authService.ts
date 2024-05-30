@@ -17,9 +17,9 @@ class AuthService {
     }
   }
 
-  async login(email: string, password: string, username: string, authorName: string): Promise<string> {
+  async login(email: string, password: string, username: string, author_name: string): Promise<string> {
     try {
-      const response = await axios.post(BASE_AUTH_URL + 'login', { email, password, username, authorName });
+      const response = await axios.post(BASE_AUTH_URL + 'login', { email, password, username, author_name });
       const token = response.data.token;
       jwtService.storeJwt(token);
       return 'Login successfully';

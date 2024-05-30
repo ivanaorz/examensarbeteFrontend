@@ -8,7 +8,7 @@
       </div>
       <div class="form-group">
         <label for="authorName">Author name</label>
-        <input type="text" v-model="authorName" id="authorName" required />
+        <input type="text" v-model="author_name" id="author_name" required />
       </div>
       <div class="form-group">
         <label for="email">Email</label>
@@ -48,7 +48,7 @@ import AuthService from '../service/authService';
 export default {
   setup() {
     const username = ref('');
-    const authorName = ref('');
+    const author_name = ref('');
     const email = ref('');
     const password = ref('');
     const showModal = ref(false);
@@ -61,7 +61,7 @@ export default {
       try {
         const authDetails = {
           username: username.value,
-          authorName: authorName.value,
+          author_name: author_name.value,
           email: email.value,
           password: password.value,
         };
@@ -98,7 +98,7 @@ export default {
 
     return {
       username,
-      authorName,
+      author_name,
       email,
       password,
       showModal,

@@ -4,7 +4,7 @@ export interface UserDetails {
     email: string;
     password: string;
     role: string; 
-    authorName: string;
+    author_name: string;
   }
 
 
