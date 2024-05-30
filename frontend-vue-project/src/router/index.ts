@@ -6,7 +6,7 @@ import PersonalPageView from '../views/PersonalPageView.vue';
 import CreateBookView from '../views/CreateBookView.vue';
 import SeeBooksView from '../views/SeeBooksView.vue';
 import UpdateBookView from '../views/UpdateBookView.vue';
-// import DeleteBookView from '../views/DeleteBookView.vue';
+import DeleteBookView from '../views/DeleteBookView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,7 +33,7 @@ const router = createRouter({
     },
    
     {
-      path: '/create',
+      path: '/create-book',
       name: 'CreateBookEntry',
       component: CreateBookView
     },
@@ -47,11 +47,11 @@ const router = createRouter({
       name: 'UpdateBookEntry',
       component: UpdateBookView
     },
-    // {
-    //   path: '/delete',
-    //   name: 'DeleteBookEntry',
-    //   component: DeleteBookView
-    // }
+    {
+      path: '/delete-book',
+      name: 'DeleteBookEntry',
+      component: DeleteBookView
+    }
     
   ]
 })
