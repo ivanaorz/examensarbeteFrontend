@@ -14,6 +14,7 @@
       </ul>
     </div>
   </template>
+
   
   <script lang="ts">
   import { defineComponent, ref, onMounted } from 'vue';
@@ -35,7 +36,7 @@
       const fetchBooks = async () => {
         try {
           const bookEntries = await BookService.getBooks();
-          if (bookEntries.length === 0) {
+          if (!bookEntries || bookEntries.length === 0) {
             message.value = 'There are no book entries yet.';
           } else {
             books.value = bookEntries;
@@ -44,7 +45,7 @@
           message.value = (error as Error).message;
         }
       };
-  
+    
       const goBack = () => {
         router.push({ name: 'PersonalPage' });
       };
