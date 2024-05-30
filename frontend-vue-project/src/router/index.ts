@@ -8,6 +8,7 @@ import SeeBooksView from '../views/SeeBooksView.vue';
 import UpdateBookView from '../views/UpdateBookView.vue';
 import DeleteBookView from '../views/DeleteBookView.vue';
 import SeeWritersView from '@/views/SeeWritersView.vue';
+import SeeWritersBooksView from '@/views/SeeWritersBooksView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,9 +55,15 @@ const router = createRouter({
       component: DeleteBookView
     },
     {
-      path: '/see-writers',
-      name: 'SeeWriters',
+      path: '/seeWriters',
+      name: 'seeWriters',
       component: SeeWritersView
+    },
+    {
+      path: '/authors/:author_name',
+      name: 'SeeWritersBooksView',
+      component: SeeWritersBooksView,
+      props: true
     }
     
   ]

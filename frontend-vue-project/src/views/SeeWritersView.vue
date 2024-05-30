@@ -2,8 +2,8 @@
     <div class="sea-writers-view">
       <h1>list with writers</h1>
       <ul>
-        <li v-for="author in authors" :key="author" @click="goToAuthorBooks(author)">
-          {{ author }}
+        <li v-for="author_name in authors" :key="author_name" @click="goToAuthorBooks(author_name)">
+          {{ author_name }}
         </li>
       </ul>
     </div>
@@ -29,8 +29,8 @@
         }
       };
   
-      const goToAuthorBooks = (authorName: string) => {
-        router.push({ name: 'AuthorBooksView', params: { authorName } });
+      const goToAuthorBooks = (author_name: string) => {
+        router.push({ name: 'SeeWritersBooksView', params: { author_name } });
       };
   
       onMounted(() => {
