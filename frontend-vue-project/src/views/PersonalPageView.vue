@@ -10,7 +10,6 @@
           <li @click="navigateTo('ListBookEntries')">See all book entries</li>
           <li @click="navigateTo('UpdateBookEntry')">Update book entry</li>
           <li @click="navigateTo('DeleteBookEntry')">Delete book entry</li>
-          <!-- <li @click="logout">Logout</li> -->
           <li><LogoutButton /></li>
         </ul>
       </div>
