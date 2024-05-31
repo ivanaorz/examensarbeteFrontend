@@ -1,2 +1,2 @@
-# examensarbeteFrontend
-Frontend part
+BACKEND PART 
+https://github.com/ivanaorz/examensarbete.git
